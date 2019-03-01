@@ -58,6 +58,8 @@
 #include "v1ntex_exploit.h"
 #include "v3ntex_exploit.h"
 #include "lzssdec.h"
+#include "machswap_pwn.h"
+#include "machswap_offsets.h"
 
 @interface NSUserDefaults ()
 - (id)objectForKey:(id)arg1 inDomain:(id)arg2;
@@ -815,6 +817,17 @@ void jailbreak()
                 }
                 case v3ntex_exploit: {
                     if (v3ntex(v3ntex_callback, NULL) == ERR_SUCCESS &&
+                        MACH_PORT_VALID(tfp0) &&
+                        ISADDR(kernel_base) &&
+                        ISADDR(kernel_slide)) {
+                        exploit_success = true;
+                    }
+                    break;
+                }
+                case mach_swap_exploit: {
+                    machswap_offsets_t *machswap_offsets = NULL;
+                    if ((machswap_offsets = get_machswap_offsets()) != NULL &&
+                        machswap_exploit(machswap_offsets, &tfp0, &kernel_base) == ERR_SUCCESS &&
                         MACH_PORT_VALID(tfp0) &&
                         ISADDR(kernel_base) &&
                         ISADDR(kernel_slide)) {
