@@ -147,7 +147,7 @@
 		21A97FCC2148103B00DC0023 /* KernelUtilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = KernelUtilities.c; sourceTree = "<group>"; };
 		21A97FCD2148103B00DC0023 /* remote_call.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = remote_call.c; sourceTree = "<group>"; };
 		21A97FCE2148103C00DC0023 /* remote_memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = remote_memory.h; sourceTree = "<group>"; };
-		21C0FC6721369EB700849420 /* Undecimus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Undecimus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		21C0FC6721369EB700849420 /* sl33tr41n.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sl33tr41n.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21C0FC6A21369EB700849420 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		21C0FC6B21369EB700849420 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		21C0FC6D21369EB700849420 /* JailbreakViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JailbreakViewController.h; sourceTree = "<group>"; };
@@ -508,7 +508,7 @@
 		21C0FC6821369EB700849420 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				21C0FC6721369EB700849420 /* Undecimus.app */,
+				21C0FC6721369EB700849420 /* sl33tr41n.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -568,9 +568,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		21C0FC6621369EB700849420 /* Undecimus */ = {
+		21C0FC6621369EB700849420 /* sl33tr41n */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 21C0FC7D21369EB800849420 /* Build configuration list for PBXNativeTarget "Undecimus" */;
+			buildConfigurationList = 21C0FC7D21369EB800849420 /* Build configuration list for PBXNativeTarget "sl33tr41n" */;
 			buildPhases = (
 				21C0FC6321369EB700849420 /* Sources */,
 				21C0FC6521369EB700849420 /* Resources */,
@@ -581,9 +581,9 @@
 			);
 			dependencies = (
 			);
-			name = Undecimus;
+			name = sl33tr41n;
 			productName = Rollectra;
-			productReference = 21C0FC6721369EB700849420 /* Undecimus.app */;
+			productReference = 21C0FC6721369EB700849420 /* sl33tr41n.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -593,15 +593,20 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = Pwn20wnd;
+				ORGANIZATIONNAME = sl33tr41n;
 				TargetAttributes = {
 					21C0FC6621369EB700849420 = {
 						CreatedOnToolsVersion = 9.4.1;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Multipath = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
-			buildConfigurationList = 21C0FC6221369EB700849420 /* Build configuration list for PBXProject "Undecimus" */;
+			buildConfigurationList = 21C0FC6221369EB700849420 /* Build configuration list for PBXProject "sl33tr41n" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -614,7 +619,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				21C0FC6621369EB700849420 /* Undecimus */,
+				21C0FC6621369EB700849420 /* sl33tr41n */,
 			);
 		};
 /* End PBXProject section */
@@ -831,8 +836,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Undecimus/resources/multi_path.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JN3J9W4VNK;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -861,7 +866,7 @@
 					IOKit,
 					"-w",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = science.xnu.undecimus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.whyisitreal.sl33tr41n;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -876,8 +881,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Undecimus/resources/multi_path.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JN3J9W4VNK;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -906,7 +911,7 @@
 					IOKit,
 					"-w",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = science.xnu.undecimus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.whyisitreal.sl33tr41n;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -916,7 +921,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		21C0FC6221369EB700849420 /* Build configuration list for PBXProject "Undecimus" */ = {
+		21C0FC6221369EB700849420 /* Build configuration list for PBXProject "sl33tr41n" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				21C0FC7B21369EB800849420 /* Debug */,
@@ -925,7 +930,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		21C0FC7D21369EB800849420 /* Build configuration list for PBXNativeTarget "Undecimus" */ = {
+		21C0FC7D21369EB800849420 /* Build configuration list for PBXNativeTarget "sl33tr41n" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				21C0FC7E21369EB800849420 /* Debug */,

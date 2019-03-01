@@ -351,7 +351,7 @@
 }
 
 - (IBAction)tappedOnOpenGithub:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/pwn20wndstuff/Undecimus"] options:@{} completionHandler:nil];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/sl33tr41n/sl33tr41n"] options:@{} completionHandler:nil];
 }
 
 - (IBAction)OverwriteBootNonceSwitchTriggered:(id)sender {

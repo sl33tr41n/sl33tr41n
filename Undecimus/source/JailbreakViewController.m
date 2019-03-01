@@ -2167,7 +2167,7 @@ out:
         _assert(bundledResources != nil, NSLocalizedString(@"Bundled Resources version missing.", nil), true);
         if (!jailbreakSupported()) {
             STATUS(NSLocalizedString(@"Unsupported", nil), false, true);
-            return;
+            //return;
         }
         jailbreak();
     });
@@ -2193,7 +2193,7 @@ out:
     if (jailbreakEnabled()) {
         STATUS(NSLocalizedString(@"Re-Jailbreak", nil), true, true);
     } else if (!jailbreakSupported()) {
-        STATUS(NSLocalizedString(@"Unsupported", nil), false, true);
+        //STATUS(NSLocalizedString(@"Unsupported", nil), false, true);
     }
     if (bundledResources == nil) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul), ^{
