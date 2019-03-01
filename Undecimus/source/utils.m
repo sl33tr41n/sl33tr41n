@@ -1093,8 +1093,8 @@ NSString *bundledResourcesVersion() {
 }
 
 NSString *appVersion() {
-    NSBundle *bundle = [NSBundle mainBundle];
-    return [bundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    //NSBundle *bundle = [NSBundle mainBundle];
+    return @"3.0.0~1";//[bundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
 }
 
 bool debuggerEnabled() {

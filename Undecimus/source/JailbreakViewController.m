@@ -2167,7 +2167,7 @@ out:
         _assert(bundledResources != nil, NSLocalizedString(@"Bundled Resources version missing.", nil), true);
         if (!jailbreakSupported()) {
             STATUS(NSLocalizedString(@"Unsupported", nil), false, true);
-            //return;
+            return;
         }
         jailbreak();
     });
@@ -2185,7 +2185,7 @@ out:
     }
     sharedController = self;
     bundledResources = bundledResourcesVersion();
-    LOG("unc0ver Version: %@", appVersion());
+    LOG("sl33tr41n Version: %@", appVersion());
     struct utsname kern = { 0 };
     uname(&kern);
     LOG("%s", kern.version);
@@ -2193,7 +2193,7 @@ out:
     if (jailbreakEnabled()) {
         STATUS(NSLocalizedString(@"Re-Jailbreak", nil), true, true);
     } else if (!jailbreakSupported()) {
-        //STATUS(NSLocalizedString(@"Unsupported", nil), false, true);
+        STATUS(NSLocalizedString(@"Unsupported", nil), false, true);
     }
     if (bundledResources == nil) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul), ^{
@@ -2226,6 +2226,11 @@ out:
 - (IBAction)tappedOnSamG:(id)sender{
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://reddit.com/u/Samg_is_a_Ninja"] options:@{} completionHandler:nil];
 }
+
+- (IBAction)tappedOnSl33t:(id)sender{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://sl33tr41n.github.io/"] options:@{} completionHandler:nil];
+}
+
 
 // This intentionally returns nil if called before it's been created by a proper init
 +(JailbreakViewController *)sharedController {

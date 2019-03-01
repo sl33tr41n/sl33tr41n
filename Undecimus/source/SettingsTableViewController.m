@@ -210,7 +210,7 @@
     [myView setAlpha:0.84];
     [myView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
     [myImageView addSubview:myView];
-    [self.tableView setBackgroundView:myImageView];
+    //[self.tableView setBackgroundView:myImageView];
     [self.BootNonceTextField setDelegate:self];
     self.tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(userTappedAnyware:)];
     self.tap.cancelsTouchesInView = NO;
@@ -384,7 +384,7 @@
 
 - (IBAction)tappedOnCheckForUpdate:(id)sender {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul), ^{
-        NSString *Update = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"https://github.com/pwn20wndstuff/Undecimus/raw/master/Update.txt"] encoding:NSUTF8StringEncoding error:nil];
+        NSString *Update = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"https://github.com/sl33tr41n/sl33tr41n/raw/master/Update.txt"] encoding:NSUTF8StringEncoding error:nil];
         if (Update == nil) {
             NOTICE(NSLocalizedString(@"Failed to check for update.", nil), true, false);
         } else if ([Update compare:appVersion() options:NSNumericSearch] == NSOrderedDescending) {
@@ -419,7 +419,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayFooterView:(UITableViewHeaderFooterView *)footerView forSection:(NSInteger)section {
-    footerView.textLabel.text = [@"unc0ver " stringByAppendingString:appVersion()];
+    footerView.textLabel.text = [@"sl33tr41n " stringByAppendingString:appVersion()];
     footerView.textLabel.textAlignment = NSTextAlignmentCenter;
 }
 

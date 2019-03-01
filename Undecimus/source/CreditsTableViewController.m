@@ -24,7 +24,7 @@
     [myView setAlpha:0.84];
     [myView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
     [myImageView addSubview:myView];
-    [self.tableView setBackgroundView:myImageView];
+    //[self.tableView setBackgroundView:myImageView];
 }
 
 - (void)didReceiveMemoryWarning {
