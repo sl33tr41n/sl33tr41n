@@ -14,8 +14,8 @@
 #include "remote_call.h"
 #include "JailbreakViewController.h"
 #include "utils.h"
-#include "voucher_swap-poc.h"
-#include "necp.h"
+#include "exploits/voucher_swap-poc/voucher_swap-poc.h"
+#include "exploits/exploits.h"
 
 @interface SettingsTableViewController ()
 
@@ -244,6 +244,7 @@
     [self.KernelExploitSegmentedControl setEnabled:supportsExploit(voucher_swap_exploit) forSegmentAtIndex:voucher_swap_exploit];
     [self.KernelExploitSegmentedControl setEnabled:supportsExploit(v1ntex_exploit) forSegmentAtIndex:v1ntex_exploit];
     [self.KernelExploitSegmentedControl setEnabled:supportsExploit(v3ntex_exploit) forSegmentAtIndex:v3ntex_exploit];
+    [self.KernelExploitSegmentedControl setEnabled:supportsExploit(mach_swap_exploit) forSegmentAtIndex:mach_swap_exploit];
     [self.OpenCydiaButton setEnabled:[[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"cydia://"]]];
     [self.ExpiryLabel setPlaceholder:[NSString stringWithFormat:@"%d %@", (int)[[SettingsTableViewController _provisioningProfileAtPath:[[NSBundle mainBundle] pathForResource:@"embedded" ofType:@"mobileprovision"]][@"ExpirationDate"] timeIntervalSinceDate:[NSDate date]] / 86400, NSLocalizedString(@"Days", nil)]];
     [self.OverwriteBootNonceSwitch setOn:[[NSUserDefaults standardUserDefaults] boolForKey:K_OVERWRITE_BOOT_NONCE]];
@@ -319,7 +320,7 @@
                 necp_die();
                 break;
             }
-            case voucher_swap_exploit: {
+            case voucher_swap_poc_exploit: {
                 voucher_swap_poc();
                 break;
             }
