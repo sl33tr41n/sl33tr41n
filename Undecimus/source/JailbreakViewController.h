@@ -15,21 +15,21 @@ static NSString *message = nil;
 #define SETMESSAGE(msg) (message = msg)
 
 #define _assert(test, message, fatal) do \
-    if (!(test)) { \
-        int saved_errno = errno; \
-        LOG("__assert(%d:%s)@%s:%u[%s]", saved_errno, #test, __FILENAME__, __LINE__, __FUNCTION__); \
-        if (message != nil) \
-            showAlert(fatal ? @"Error (Fatal)" : @"Error (Nonfatal)", [NSString stringWithFormat:@"Errno: %d\nTest: %s\nFilename: %s\nLine: %d\nFunction: %s\nDescription: %@", saved_errno, #test, __FILENAME__, __LINE__, __FUNCTION__, message], true, false); \
-        else \
-            showAlert(fatal ? @"Error (Fatal)" : @"Error (Nonfatal)", [NSString stringWithFormat:@"Errno: %d\nTest: %s\nFilename: %s\nLine: %d\nFunction: %s", saved_errno, #test, __FILENAME__, __LINE__, __FUNCTION__], true, false); \
-        if (fatal) { \
-            if ([[JailbreakViewController sharedController] canExit]) {\
-                exit(EXIT_FAILURE); \
-            } else { \
-                return; \
-            } \
-        } \
-    } \
+if (!(test)) { \
+int saved_errno = errno; \
+LOG("__assert(%d:%s)@%s:%u[%s]", saved_errno, #test, __FILENAME__, __LINE__, __FUNCTION__); \
+if (message != nil) \
+showAlert(fatal ? @"Error (Fatal)" : @"Error (Nonfatal)", [NSString stringWithFormat:@"Errno: %d\nTest: %s\nFilename: %s\nLine: %d\nFunction: %s\nDescription: %@", saved_errno, #test, __FILENAME__, __LINE__, __FUNCTION__, message], true, false); \
+else \
+showAlert(fatal ? @"Error (Fatal)" : @"Error (Nonfatal)", [NSString stringWithFormat:@"Errno: %d\nTest: %s\nFilename: %s\nLine: %d\nFunction: %s", saved_errno, #test, __FILENAME__, __LINE__, __FUNCTION__], true, false); \
+if (fatal) { \
+if ([[JailbreakViewController sharedController] canExit]) {\
+exit(EXIT_FAILURE); \
+} else { \
+return; \
+} \
+} \
+} \
 while (false)
 
 #define NOTICE(msg, wait, destructive) showAlert(@"Notice", msg, wait, destructive)
@@ -87,7 +87,7 @@ static inline void showAlert(NSString *title, NSString *message, Boolean wait, B
     dispatch_block_t checkOutput = ^{
         outputIsHidden = [[[JailbreakViewController sharedController] outputView] isHidden];
     };
-
+    
     if ([[NSThread currentThread] isMainThread]) {
         checkOutput();
     } else {
