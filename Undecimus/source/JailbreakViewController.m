@@ -908,6 +908,10 @@ SETOFFSET(x, GETOFFSET(x) + kernel_slide); \
             PF(pmap_load_trust_cache);
         }
 #undef PF
+        uint64_t kernproc = ReadKernel64(GETOFFSET(kernel_task)) + koffset(KSTRUCT_OFFSET_TASK_BSD_INFO);
+        _assert(ISADDR(kernproc), message, true);
+        SETOFFSET(kernproc, kernproc);
+        LOG("kernproc = " ADDR, GETOFFSET(kernproc) - kernel_slide);
         found_offsets = true;
         LOG("Successfully found offsets.");
     }
@@ -1601,6 +1605,7 @@ SETOFFSET(x, GETOFFSET(x) + kernel_slide); \
         dictionary[@"VnodeGetSnapshot"] = ADDRSTRING(GETOFFSET(vnode_get_snapshot));
         dictionary[@"FsLookupSnapshotMetadataByNameAndReturnName"] = ADDRSTRING(GETOFFSET(fs_lookup_snapshot_metadata_by_name_and_return_name));
         dictionary[@"APFSJhashGetVnode"] = ADDRSTRING(GETOFFSET(apfs_jhash_getvnode));
+        dictionary[@"KernProc"] = ADDRSTRING(GETOFFSET(kernproc));
         if (![[NSMutableDictionary dictionaryWithContentsOfFile:offsetsFile] isEqual:dictionary]) {
             // Log offsets.
             
@@ -2139,9 +2144,9 @@ SETOFFSET(x, GETOFFSET(x) + kernel_slide); \
                             "\" >/dev/null 2>&1 &");
             } else {
                 rv = system("nohup bash -c \""
-                            "launchctl stop com.apple.backboardd ;"
-                            "launchctl stop com.apple.mDNSResponder"
-                            "\" >/dev/null 2>&1 &");
+                             "launchctl stop com.apple.mDNSResponder ;"
+                             "launchctl stop com.apple.backboardd"
+                             "\" >/dev/null 2>&1 &");
             }
             _assert(WEXITSTATUS(rv) == ERR_SUCCESS, message, true);
             LOG("Successfully loaded Tweaks.");
