@@ -809,9 +809,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6Xx-ol-UYF">
-                                                    <rect key="frame" x="186" y="8" width="181" height="29"/>
+                                                    <rect key="frame" x="238" y="8" width="129" height="29"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="181" id="TF2-Tk-s34"/>
+                                                        <constraint firstAttribute="width" constant="129" id="TF2-Tk-s34"/>
                                                         <constraint firstAttribute="height" constant="28" id="iH5-4V-9vm"/>
                                                     </constraints>
                                                     <segments>
@@ -819,8 +819,6 @@
                                                         <segment title="MP"/>
                                                         <segment title="AW"/>
                                                         <segment title="VS"/>
-                                                        <segment title="V1"/>
-                                                        <segment title="V3"/>
                                                         <segment title="MS"/>
                                                     </segments>
                                                     <connections>
@@ -1214,7 +1212,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="upc-ND-SAi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2523.75" y="31.690140845070424"/>
+            <point key="canvasLocation" x="2522.4000000000001" y="31.03448275862069"/>
         </scene>
         <!--Special Thanks-->
         <scene sceneID="x6W-Dv-xaI">
